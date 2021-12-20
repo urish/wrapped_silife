@@ -1,0 +1,3 @@
+[submodule "silife"]
+	path = silife
+	url = https://github.com/urish/silife

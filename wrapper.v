@@ -3,15 +3,19 @@
     `define MPRJ_IO_PADS 38    
 `endif
 
-//`define USE_WB  1
+`define USE_WB  1
 `define USE_LA  1
 `define USE_IO  1
 //`define USE_SHARED_OPENRAM 1
 //`define USE_MEM 1
 //`define USE_IRQ 1
 
+`define PIN_CS   8
+`define PIN_SCK  9
+`define PIN_MOSI 10
+
 // update this to the name of your module
-module wrapped_project(
+module wrapped_silife(
 `ifdef USE_POWER_PINS
     inout vccd1,	// User area 1 1.8V supply
     inout vssd1,	// User area 1 digital ground
@@ -151,6 +155,23 @@ module wrapped_project(
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
     // Use the buffered outputs for your module's outputs.
+    silife #(.WIDTH(32), .HEIGHT(32)) silife1 (
+        .reset(la1_data_in[0]),
+        .clk(wb_clk_i),
+
+        .spi_cs(buf_io_out[`PIN_CS]),
+        .spi_sck(buf_io_out[`PIN_SCK]),
+        .spi_mosi(buf_io_out[`PIN_MOSI]),
+
+        // Wishbone slave
+        .i_wb_cyc(wbs_stb_i),
+        .i_wb_stb(wbs_stb_i),
+        .i_wb_we(wbs_we_i),
+        .i_wb_addr(wbs_adr_i),
+        .i_wb_data(wbs_dat_i),
+        .o_wb_ack(buf_wbs_ack_o),
+        .o_wb_data(buf_wbs_dat_o)
+    );
 
 endmodule 
 `default_nettype wire

@@ -42,21 +42,24 @@ export LIBPYTHON_LOC=$(shell cocotb-config --libpython)
 
 .SUFFIXES:
 
-PATTERN = project
+PATTERN = silife_test
 
 all:  coco_test
 
 hex:  ${PATTERN:=.hex}
 
+show:
+	gtkwave $(CARAVEL_ROOT)/../verilog/dv/caravel_silife_test/silife.vcd silife.gtkw
+
 coco_test: ${PATTERN}.hex
 	rm -rf sim_build/
 	mkdir sim_build/
-	iverilog -o sim_build/sim.vvp -s project_tb project_tb.v -DSIM -DFUNCTIONAL \
+	iverilog -o sim_build/sim.vvp -s silife_tb silife_tb.v -DSIM -DFUNCTIONAL \
 	-I $(PDK_PATH) \
 	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
 	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH)
 	
-	MODULE=test_project vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
+	MODULE=test_silife vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 	! grep failure results.xml
 
 %.vvp: %_tb.v %.hex

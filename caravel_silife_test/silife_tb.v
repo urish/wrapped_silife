@@ -21,10 +21,10 @@
 `include "caravel_netlists.v"
 `include "spiflash.v"
 
-module project_tb;
+module silife_tb;
     initial begin
-        $dumpfile ("project.vcd");
-        $dumpvars (0, project_tb);
+        $dumpfile ("silife.vcd");
+        $dumpvars (0, silife_tb);
         #1;
     end
 
@@ -79,7 +79,7 @@ module project_tb;
 	);
 
 	spiflash #(
-		.FILENAME("project.hex")
+		.FILENAME("silife_test.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),
