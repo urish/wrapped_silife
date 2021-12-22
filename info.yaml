@@ -3,7 +3,7 @@
 project: 
   title: "SiLife"
   description: "Game of Life, in Silicon"
-  picture: docs/empty.png
+  picture: docs/silife.png
   author: "Uri Shaked"
   license: LICENSE
 
