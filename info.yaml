@@ -37,8 +37,8 @@ openlane:
 source:
     - wrapper.v
     - silife/src/cell.v
-    - silife/src/matrix_32x32.v
-    - silife/src/matrix_wishbone.v
+    - silife/src/grid_32x32.v
+    - silife/src/grid_wishbone.v
     - silife/src/spi_master.v
     - silife/src/max7219.v
     - silife/src/silife.v
