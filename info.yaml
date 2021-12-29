@@ -39,6 +39,8 @@ source:
     - wrapper.v
     - silife/src/cell.v
     - silife/src/grid_32x32.v
+    - silife/src/grid_sync.v
+    - silife/src/grid_sync_edge.v
     - silife/src/grid_wishbone.v
     - silife/src/spi_master.v
     - silife/src/max7219.v

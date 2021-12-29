@@ -14,6 +14,18 @@
 `define PIN_SCK  9
 `define PIN_MOSI 10
 
+`define PIN_SYNC_ACTIVE 11
+`define PIN_SYNC_CLK    12
+`define PIN_SYNC_BUSY   13
+`define PIN_SYNC_N_IN   14
+`define PIN_SYNC_N_OUT   15
+`define PIN_SYNC_E_IN    16
+`define PIN_SYNC_E_OUT   17
+`define PIN_SYNC_S_IN    18
+`define PIN_SYNC_S_OUT   19
+`define PIN_SYNC_W_IN    20
+`define PIN_SYNC_W_OUT   21
+
 // update this to the name of your module
 module wrapped_silife(
 `ifdef USE_POWER_PINS
@@ -162,6 +174,18 @@ module wrapped_silife(
         .spi_cs(buf_io_out[`PIN_CS]),
         .spi_sck(buf_io_out[`PIN_SCK]),
         .spi_mosi(buf_io_out[`PIN_MOSI]),
+
+        .i_sync_clk$syn(io_in[`PIN_SYNC_CLK]),
+        .i_sync_active$syn(io_in[`PIN_SYNC_ACTIVE]),
+        .i_sync_in_n$syn(io_in[`PIN_SYNC_N_IN]),
+        .i_sync_in_e$syn(io_in[`PIN_SYNC_E_IN]),
+        .i_sync_in_s$syn(io_in[`PIN_SYNC_S_IN]),
+        .i_sync_in_w$syn(io_in[`PIN_SYNC_W_IN]),
+        .o_busy(io_in[`PIN_SYNC_BUSY]),
+        .o_sync_out_n$syn(buf_io_out[`PIN_SYNC_N_OUT]),
+        .o_sync_out_e$syn(buf_io_out[`PIN_SYNC_E_OUT]),
+        .o_sync_out_s$syn(buf_io_out[`PIN_SYNC_S_OUT]),
+        .o_sync_out_w$syn(buf_io_out[`PIN_SYNC_W_OUT]),
 
         // Wishbone slave
         .i_wb_cyc(wbs_stb_i),

@@ -9,6 +9,8 @@ set ::env(VERILOG_FILES) "
     $::env(DESIGN_DIR)/wrapper.v
     $::env(DESIGN_DIR)/silife/src/cell.v
     $::env(DESIGN_DIR)/silife/src/grid_32x32.v
+    $::env(DESIGN_DIR)/silife/src/grid_sync.v
+    $::env(DESIGN_DIR)/silife/src/grid_sync_edge.v
     $::env(DESIGN_DIR)/silife/src/grid_wishbone.v
     $::env(DESIGN_DIR)/silife/src/spi_master.v
     $::env(DESIGN_DIR)/silife/src/max7219.v
