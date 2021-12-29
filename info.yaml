@@ -37,8 +37,10 @@ openlane:
 # source required for various configs and module instantiation
 source:
     - wrapper.v
+    - silife/src/buf_reg.v
     - silife/src/cell.v
     - silife/src/grid_32x32.v
+    - silife/src/grid_loader.v
     - silife/src/grid_sync.v
     - silife/src/grid_sync_edge.v
     - silife/src/grid_wishbone.v

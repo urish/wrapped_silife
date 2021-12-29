@@ -5,14 +5,16 @@ mode prove
 smtbmc
 
 [script]
-read -formal wrapper.v cell.v grid_32x32.v grid_sync.v grid_sync_edge.v grid_wishbone.v spi_master.v max7219.v silife.v
+read -formal wrapper.v buf_reg.v cell.v grid_32x32.v grid_loader.v grid_sync.v grid_sync_edge.v grid_wishbone.v spi_master.v max7219.v silife.v
 prep -top wrapped_silife
 
 [files]
 wrapper.v
 properties.v
+silife/src/buf_reg.v
 silife/src/cell.v
 silife/src/grid_32x32.v
+silife/src/grid_loader.v
 silife/src/grid_sync.v
 silife/src/grid_sync_edge.v
 silife/src/grid_wishbone.v
