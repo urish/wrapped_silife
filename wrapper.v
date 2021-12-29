@@ -26,6 +26,11 @@
 `define PIN_SYNC_W_IN    20
 `define PIN_SYNC_W_OUT   21
 
+`define PIN_LOADER_CS    22
+`define PIN_LOADER_CLK   23
+`define PIN_LOADER_DIN   24
+`define PIN_LOADER_DOUT  25
+
 // update this to the name of your module
 module wrapped_silife(
 `ifdef USE_POWER_PINS
@@ -175,6 +180,7 @@ module wrapped_silife(
         .spi_sck(buf_io_out[`PIN_SCK]),
         .spi_mosi(buf_io_out[`PIN_MOSI]),
 
+        // Inter-matrix synchronization interface
         .i_sync_clk$syn(io_in[`PIN_SYNC_CLK]),
         .i_sync_active$syn(io_in[`PIN_SYNC_ACTIVE]),
         .i_sync_in_n$syn(io_in[`PIN_SYNC_N_IN]),
@@ -186,6 +192,12 @@ module wrapped_silife(
         .o_sync_out_e$syn(buf_io_out[`PIN_SYNC_E_OUT]),
         .o_sync_out_s$syn(buf_io_out[`PIN_SYNC_S_OUT]),
         .o_sync_out_w$syn(buf_io_out[`PIN_SYNC_W_OUT]),
+
+        // SPI Loader interface
+        .i_load_cs$load(io_in[`PIN_LOADER_CS]),
+        .i_load_clk$load(io_in[`PIN_LOADER_CLK]),
+        .i_load_data$load(io_in[`PIN_LOADER_DIN]),
+        .o_load_data$load(buf_io_out[`PIN_LOADER_DOUT]),
 
         // Wishbone slave
         .i_wb_cyc(wbs_stb_i),
