@@ -166,8 +166,13 @@ module wrapped_silife(
     `endif
     `endif
 
-    // permanently set oeb so that outputs are always enabled: 0 is output, 1 is high-impedance
-    assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
+
+    // The BUSY pin is an open-drain pin
+    wire silife_busy;
+    assign buf_io_oeb[`MPRJ_IO_PADS-1:`PIN_SYNC_BUSY+1] = 0;
+    assign buf_io_oeb[`PIN_SYNC_BUSY] = silife_busy;
+    assign buf_io_oeb[`PIN_SYNC_BUSY-1:0] = 0;
+    assign buf_io_out[`PIN_SYNC_BUSY] = 0;
 
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
@@ -187,7 +192,7 @@ module wrapped_silife(
         .i_sync_in_e$syn(io_in[`PIN_SYNC_E_IN]),
         .i_sync_in_s$syn(io_in[`PIN_SYNC_S_IN]),
         .i_sync_in_w$syn(io_in[`PIN_SYNC_W_IN]),
-        .o_busy(io_in[`PIN_SYNC_BUSY]),
+        .o_busy(silife_busy),
         .o_sync_out_n$syn(buf_io_out[`PIN_SYNC_N_OUT]),
         .o_sync_out_e$syn(buf_io_out[`PIN_SYNC_E_OUT]),
         .o_sync_out_s$syn(buf_io_out[`PIN_SYNC_S_OUT]),
