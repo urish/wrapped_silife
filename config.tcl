@@ -20,8 +20,8 @@ set ::env(VERILOG_FILES) "
 "
 
 # target density, change this if you can't get your design to fit
-set ::env(FP_CORE_UTIL) 35
-set ::env(PL_TARGET_DENSITY) 0.4
+set ::env(FP_CORE_UTIL) 40
+set ::env(PL_TARGET_DENSITY) 0.45
 
 # don't put clock buffers on the outputs, need tristates to be the final cells
 set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
