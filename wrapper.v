@@ -10,9 +10,9 @@
 //`define USE_MEM 1
 //`define USE_IRQ 1
 
-`define PIN_CS   8
-`define PIN_SCK  9
-`define PIN_MOSI 10
+`define PIN_MAX7219_CS   8
+`define PIN_MAX7219_SCK  9
+`define PIN_MAX7219_MOSI 10
 
 `define PIN_SYNC_ACTIVE 11
 `define PIN_SYNC_CLK    12
@@ -181,9 +181,9 @@ module wrapped_silife(
         .reset(la1_data_in[0]),
         .clk(wb_clk_i),
 
-        .spi_cs(buf_io_out[`PIN_CS]),
-        .spi_sck(buf_io_out[`PIN_SCK]),
-        .spi_mosi(buf_io_out[`PIN_MOSI]),
+        .spi_cs(buf_io_out[`PIN_MAX7219_CS]),
+        .spi_sck(buf_io_out[`PIN_MAX7219_SCK]),
+        .spi_mosi(buf_io_out[`PIN_MAX7219_MOSI]),
 
         // Inter-matrix synchronization interface
         .i_sync_clk$syn(io_in[`PIN_SYNC_CLK]),
