@@ -34,7 +34,7 @@ set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
 set ::env(SYNTH_DEFINES) "MPRJ_IO_PADS=38"
 
 # clock period is ns
-set ::env(CLOCK_PERIOD) "20"
+set ::env(CLOCK_PERIOD) "40"
 set ::env(CLOCK_PORT) "wb_clk_i"
 
 # macro needs to work inside Caravel, so can't be core and can't use metal 5
@@ -53,5 +53,5 @@ set ::env(FP_IO_VTHICKNESS_MULT) 4
 set ::env(FP_IO_HTHICKNESS_MULT) 4
 
 # workaround for hold violations
-set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.35
-set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.35
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.3
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.3
