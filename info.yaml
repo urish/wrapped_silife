@@ -43,9 +43,11 @@ source:
     - silife/src/grid_loader.v
     - silife/src/grid_sync.v
     - silife/src/grid_sync_edge.v
+    - silife/src/grid_trng_loader.v
     - silife/src/grid_wishbone.v
     - silife/src/spi_master.v
     - silife/src/max7219.v
+    - silife/src/trng.v
     - silife/src/silife.v
 
 # gds - check nothing on metal 5, DRC & LVS

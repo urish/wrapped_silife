@@ -13,9 +13,11 @@ set ::env(VERILOG_FILES) "
     $::env(DESIGN_DIR)/silife/src/grid_loader.v
     $::env(DESIGN_DIR)/silife/src/grid_sync.v
     $::env(DESIGN_DIR)/silife/src/grid_sync_edge.v
+    $::env(DESIGN_DIR)/silife/src/grid_trng_loader.v
     $::env(DESIGN_DIR)/silife/src/grid_wishbone.v
     $::env(DESIGN_DIR)/silife/src/spi_master.v
     $::env(DESIGN_DIR)/silife/src/max7219.v
+    $::env(DESIGN_DIR)/silife/src/trng.v
     $::env(DESIGN_DIR)/silife/src/silife.v
 "
 
