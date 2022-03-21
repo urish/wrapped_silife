@@ -51,8 +51,8 @@ source:
     - silife/src/silife.v
 
 # gds - check nothing on metal 5, DRC & LVS
-gds:
-  directory: "gds"
-  gds_filename: "wrapped_silife.gds"
+final:
+  directory: "final"
+  gds_filename: "wrapped_silife.gds.gz"
   lvs_filename: "wrapped_silife.lvs.powered.v"
   lef_filename: "wrapped_silife.lef"
