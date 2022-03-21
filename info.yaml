@@ -7,6 +7,7 @@ project:
   author: "Uri Shaked"
   license: LICENSE
   waive_caravel: 'old test for Pico based SoC'
+  waive_formal: 'logic loop detected'
 
 # optional interfaces you want to use: gpio, la1, la2, la3, irq, clk2, wishbone & openram
 interfaces: ['la1', 'gpio', 'wishbone']
