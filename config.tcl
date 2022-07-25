@@ -41,7 +41,7 @@ set ::env(CLOCK_PORT) "wb_clk_i"
 
 # macro needs to work inside Caravel, so can't be core and can't use metal 5
 set ::env(DESIGN_IS_CORE) 0
-set ::env(GLB_RT_MAXLAYER) 5
+set ::env(RT_MAX_LAYER) {met4}
 
 # define power straps so the macro works inside Caravel's PDN
 set ::env(VDD_NETS) [list {vccd1}]
@@ -49,10 +49,6 @@ set ::env(GND_NETS) [list {vssd1}]
 
 # turn off CVC as we have multiple power domains
 set ::env(RUN_CVC) 0
-
-# make pins wider to solve routing issues
-set ::env(FP_IO_VTHICKNESS_MULT) 4
-set ::env(FP_IO_HTHICKNESS_MULT) 4
 
 # workaround for hold violations
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.3
