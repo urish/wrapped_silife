@@ -50,6 +50,3 @@ set ::env(GND_NETS) [list {vssd1}]
 # turn off CVC as we have multiple power domains
 set ::env(RUN_CVC) 0
 
-# workaround for hold violations
-set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.3
-set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) 0.3
