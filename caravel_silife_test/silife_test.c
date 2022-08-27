@@ -17,7 +17,7 @@
 
 #include "verilog/dv/caravel/defs.h"
 
-#define PROJECT_ID              4
+#define PROJECT_ID              2
 
 #define silife_reg_ctrl          (*(volatile uint32_t*)0x30000000)
 

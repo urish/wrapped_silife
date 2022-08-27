@@ -17,7 +17,7 @@ caravel_test:
   recipe: "coco_test"
   gl_recipe: "coco_test_gl"
   directory: "caravel_silife_test"
-  id: 4
+  id: 2
   module_name: "wrapped_silife"
   instance_name: "wrapped_silife"
 
