@@ -55,6 +55,6 @@ source:
 # gds - check nothing on metal 5, DRC & LVS
 final:
   directory: "final"
-  gds_filename: "wrapped_silife.gds"
-  lvs_filename: "wrapped_silife.lvs.powered.v"
-  lef_filename: "wrapped_silife.lef"
+  gds_filename: "gds/wrapped_silife.gds"
+  lvs_filename: "verilog/gl/wrapped_silife.v"
+  lef_filename: "lef/wrapped_silife.lef"
