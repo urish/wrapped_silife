@@ -51,6 +51,8 @@ source:
     - silife/src/max7219.v
     - silife/src/trng.v
     - silife/src/silife.v
+    - silife/src/vga.v
+    - silife/src/vga_sync_gen.v
 
 # gds - check nothing on metal 5, DRC & LVS
 final:

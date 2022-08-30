@@ -19,6 +19,8 @@ set ::env(VERILOG_FILES) "
     $::env(DESIGN_DIR)/silife/src/max7219.v
     $::env(DESIGN_DIR)/silife/src/trng.v
     $::env(DESIGN_DIR)/silife/src/silife.v
+    $::env(DESIGN_DIR)/silife/src/vga.v
+    $::env(DESIGN_DIR)/silife/src/vga_sync_gen.v
 "
 
 # target density, change this if you can't get your design to fit

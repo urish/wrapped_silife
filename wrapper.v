@@ -31,6 +31,10 @@
 `define PIN_LOADER_DIN   24
 `define PIN_LOADER_DOUT  25
 
+`define PIN_VGA_HSYNC    26
+`define PIN_VGA_VSYNC    27
+`define PIN_VGA_DATA     28
+
 // update this to the name of your module
 module wrapped_silife(
 `ifdef USE_POWER_PINS
@@ -203,6 +207,11 @@ module wrapped_silife(
         .i_load_clk$load(io_in[`PIN_LOADER_CLK]),
         .i_load_data$load(io_in[`PIN_LOADER_DIN]),
         .o_load_data$load(buf_io_out[`PIN_LOADER_DOUT]),
+
+        // VGA interface
+        .vga_hsync(buf_io_out[`PIN_VGA_HSYNC]),
+        .vga_vsync(buf_io_out[`PIN_VGA_VSYNC]),
+        .vga_data(buf_io_out[`PIN_VGA_DATA]),
 
         // Wishbone slave
         .i_wb_cyc(wbs_stb_i),
