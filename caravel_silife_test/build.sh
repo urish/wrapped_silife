@@ -1,0 +1,11 @@
+export DESIGNS=~/openmpw/caravel_user_project
+export TARGET_PATH=$DESIGNS
+export CARAVEL_ROOT=${DESIGNS}/caravel
+export GCC_PATH=/opt/riscv64-unknown-elf-toolchain-10.2.0-2020.12.8-x86_64-linux-ubuntu14/bin/
+export GCC_PREFIX=riscv64-unknown-elf
+export PDK_PATH=~/openmpw/pdk/sky130A
+export OPENLANE_ROOT=${DESIGNS}/openlane_root
+export MCW_ROOT=${DESIGNS}/mgmt_core_wrapper
+export CORE_VERILOG_PATH=$MCW_ROOT/verilog
+export MGMT_AREA_ROOT=$MCW_ROOT
+export PDK=sky130A

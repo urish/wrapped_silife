@@ -1,50 +1,64 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Mon Dec 20 19:01:43 2021
+[*] Fri Jan 12 22:48:46 2024
 [*]
-[dumpfile] "/home/uri/openmpw/caravel_user_project/verilog/dv/caravel_silife_test/silife.vcd"
-[dumpfile_mtime] "Mon Dec 20 19:00:22 2021"
-[dumpfile_size] 275250473
-[savefile] "/mnt/c/P/wrapped_silife/caravel_silife_test/silife.gtkw"
-[timestart] 0
+[dumpfile] "/home/uri/p/wrapped_silife/caravel_silife_test/silife.vcd"
+[dumpfile_mtime] "Fri Jan 12 22:46:00 2024"
+[dumpfile_size] 462551
+[savefile] "/home/uri/p/wrapped_silife/caravel_silife_test/silife.gtkw"
+[timestart] 243500000
 [size] 1908 999
 [pos] -1 -1
-*-25.377949 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-25.377949 437100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] silife_tb.
 [treeopen] silife_tb.uut.
 [treeopen] silife_tb.uut.mprj.
-[treeopen] silife_tb.uut.mprj.wrapped_silife_4.
+[treeopen] silife_tb.uut.mprj.wrapped_silife_2.
 [treeopen] silife_tb.uut.soc.
-[treeopen] silife_tb.uut.soc.soc.
-[treeopen] silife_tb.uut.soc.soc.cpu.
-[sst_width] 214
+[treeopen] silife_tb.uut.soc.core.
+[sst_width] 277
 [signals_width] 206
 [sst_expanded] 1
 [sst_vpaned_height] 293
 @28
-silife_tb.uut.mprj.wrapped_silife_4.active
-@201
+silife_tb.uut.mprj.wrapped_silife_2.active
+@29
+silife_tb.uut.mprj.wrapped_silife_2.silife1.reset
+@22
+silife_tb.uut.mprj.wrapped_silife_2.wbs_adr_i[31:0]
+silife_tb.uut.mprj.wrapped_silife_2.wbs_dat_i[31:0]
+@28
+silife_tb.uut.mprj.wrapped_silife_2.wbs_we_i
+silife_tb.uut.mprj.wrapped_silife_2.wbs_ack_o
+@200
 -
 @800200
 -MAX7219
 @28
-silife_tb.uut.mprj.wrapped_silife_4.silife1.spi_cs
-silife_tb.uut.mprj.wrapped_silife_4.silife1.spi_sck
-silife_tb.uut.mprj.wrapped_silife_4.silife1.spi_mosi
+silife_tb.max7129_cs
+silife_tb.max7219_mosi
+silife_tb.max7219_sck
 @1000200
 -MAX7219
 @200
 -
 @800200
+-VGA
+@28
+silife_tb.vga_vsync
+silife_tb.vga_hsync
+silife_tb.vga_data
+@1000200
+-VGA
+@200
+-
+@800200
 -MGMT SOC
+@28
+silife_tb.uut.soc.core_clk
 @22
-silife_tb.uut.soc.soc.cpu.picorv32_core.dbg_mem_addr[31:0]
-@820
-silife_tb.uut.soc.soc.cpu.picorv32_core.dbg_ascii_instr[63:0]
-@22
-silife_tb.uut.soc.soc.cpu.picorv32_core.dbg_insn_opcode[31:0]
-@820
-silife_tb.uut.soc.soc.cpu.picorv32_core.dbg_ascii_state[127:0]
+silife_tb.uut.soc.core.VexRiscv.execute_PC[31:0]
+silife_tb.uut.soc.core.VexRiscv.dBusWishbone_ADR[29:0]
 @1000200
 -MGMT SOC
 [pattern_trace] 1

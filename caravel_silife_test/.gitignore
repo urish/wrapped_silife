@@ -1,5 +1,8 @@
 __pycache__
 sim_build
 results.xml
-*vcd
-*hex
+*.vcd
+*.vcd.hier
+*.hex
+*.hexe
+*.elf

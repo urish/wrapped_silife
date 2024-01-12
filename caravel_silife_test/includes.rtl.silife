@@ -1,0 +1,18 @@
+# Caravel user project includes
+-v $(USER_PROJECT_VERILOG)/caravel_silife_test/user_project_wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/silife/src/buf_reg.v
+-v $(USER_PROJECT_VERILOG)/silife/src/cell.v
+-v $(USER_PROJECT_VERILOG)/silife/src/grid_32x32.v
+-v $(USER_PROJECT_VERILOG)/silife/src/grid_loader.v
+-v $(USER_PROJECT_VERILOG)/silife/src/grid_sync.v
+-v $(USER_PROJECT_VERILOG)/silife/src/grid_sync_edge.v
+-v $(USER_PROJECT_VERILOG)/silife/src/grid_trng_loader.v
+-v $(USER_PROJECT_VERILOG)/silife/src/grid_wishbone.v
+-v $(USER_PROJECT_VERILOG)/silife/src/spi_master.v
+-v $(USER_PROJECT_VERILOG)/silife/src/max7219.v
+-v $(USER_PROJECT_VERILOG)/silife/src/trng.v
+-v $(USER_PROJECT_VERILOG)/silife/src/silife.v
+-v $(USER_PROJECT_VERILOG)/silife/src/vga.v
+-v $(USER_PROJECT_VERILOG)/silife/src/vga_sync_gen.v
+

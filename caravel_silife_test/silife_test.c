@@ -15,43 +15,105 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include "verilog/dv/caravel/defs.h"
+#include <defs.h>
+#include <stub.c>
 
-#define PROJECT_ID              2
+// change to your project's ID - ask Matt
+#define PROJECT_ID 2
 
-#define silife_reg_ctrl          (*(volatile uint32_t*)0x30000000)
+#define reg_silife_ctrl         (*(volatile uint32_t*)0x30000000)
+#define reg_silife_config       (*(volatile uint32_t*)0x30000004)
+#define reg_max7219_ctrl    		(*(volatile uint32_t*)0x30000010)
+#define reg_max7219_config 			(*(volatile uint32_t*)0x30000014)
+#define reg_max7219_brightness  (*(volatile uint32_t*)0x30000018)
+#define reg_silife_dbg_selfaddr (*(volatile uint32_t*)0x30000020)
+#define reg_silife_trng         (*(volatile uint32_t*)0x30000030)
+#define reg_silife_vga          (*(volatile uint32_t*)0x30000040)
 
-#define SILIFE_CTRL_ENABLE			(1 << 0)
-#define SILIFE_CTRL_STEP				(1 << 1)
-#define SILIFE_CTRL_MAX7219_EN	(1 << 2)
+// reg_silife_ctrl bits:
+#define CTRL_ENABLE             (1 << 0)
+#define CTRL_PULSE              (1 << 1)
+
+// reg_silife_config bits:
+#define CONFIG_GRID_WRAP 				(1 << 0)
+#define CONFIG_SYNC_EN_N        (1 << 4)
+#define CONFIG_SYNC_EN_E        (1 << 5)
+#define CONFIG_SYNC_EN_S        (1 << 6)
+#define CONFIG_SYNC_EN_W        (1 << 7)
+
+// reg_max7219_ctrl bits:
+#define MAX7219_ENABLE					(1 << 0)
+#define MAX7219_PAUSE						(1 << 1)
+#define MAX7219_FRAME						(1 << 2)
+#define MAX7219_BUSY						(1 << 3)
+
+// reg_max7219_config bits:
+#define MAX7219_REVERSE_COLUMNS (1 << 0)
+#define MAX7219_SERPENTINE		  (1 << 1)
+
+// reg_max7219_brightness bits:
+#define MAX7219_BRIGHTNESS_MASK (0xf)
+
+// reg_silife_trng bits:
+#define TRNG_PULSE							(1 << 0)
+#define TRNG_BUSY								(1 << 1)
+
+// reg_silife_vga bits:
+#define VGA_ENABLE							(1 << 0)
+
 
 void main()
 {
-	  // MAX7219 Output
-		reg_mprj_io_8  = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_9  = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_10 = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_11 = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_12 = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_13 = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_14 = GPIO_MODE_USER_STD_OUTPUT;
-		reg_mprj_io_15 = GPIO_MODE_USER_STD_OUTPUT;
+	/* 
+	IO Control Registers
+	| DM     | VTRIP | SLOW  | AN_POL | AN_SEL | AN_EN | MOD_SEL | INP_DIS | HOLDH | OEB_N | MGMT_EN |
+	| 3-bits | 1-bit | 1-bit | 1-bit  | 1-bit  | 1-bit | 1-bit   | 1-bit   | 1-bit | 1-bit | 1-bit   |
 
-    /* Apply configuration */
-    reg_mprj_xfer = 1;
-    while (reg_mprj_xfer == 1);
+	Output: 0000_0110_0000_1110  (0x1808) = GPIO_MODE_USER_STD_OUTPUT
+	| DM     | VTRIP | SLOW  | AN_POL | AN_SEL | AN_EN | MOD_SEL | INP_DIS | HOLDH | OEB_N | MGMT_EN |
+	| 110    | 0     | 0     | 0      | 0      | 0     | 0       | 1       | 0     | 0     | 0       |
+	
+	 
+	Input: 0000_0001_0000_1111 (0x0402) = GPIO_MODE_USER_STD_INPUT_NOPULL
+	| DM     | VTRIP | SLOW  | AN_POL | AN_SEL | AN_EN | MOD_SEL | INP_DIS | HOLDH | OEB_N | MGMT_EN |
+	| 001    | 0     | 0     | 0      | 0      | 0     | 0       | 0       | 0     | 1     | 0       |
 
-    /* Activate the project */
-    reg_la0_iena = 0; // input enable off
-    reg_la0_oenb = 0; // output enable on
-    reg_la0_data = 1 << PROJECT_ID;
+	*/
 
-		/* Reset SiLife */
-    reg_la1_iena = 0;
-    reg_la1_oenb = 0;
-    reg_la1_data |= 1;
-    reg_la1_data &= ~1;
+	// MAX7219 outputs
+	reg_mprj_io_8 =  GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_9 =  GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_10 = GPIO_MODE_USER_STD_OUTPUT;
 
-		/* Enable MAX7219 Output */
-		silife_reg_ctrl = SILIFE_CTRL_MAX7219_EN;
+	// SPI_CTRL I/Os
+	reg_mprj_io_22 = GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_23 = GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_24 = GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_25 = GPIO_MODE_USER_STD_OUTPUT;
+
+  // VGA outputs
+	reg_mprj_io_26 = GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_27 = GPIO_MODE_USER_STD_OUTPUT;
+	reg_mprj_io_28 = GPIO_MODE_USER_STD_OUTPUT;
+
+	/* Apply configuration */
+	reg_mprj_xfer = 1;
+	while (reg_mprj_xfer == 1);
+
+	// activate the project by setting the 0th bit of 1st bank of LA
+	reg_la0_iena = 0; // input enable off
+	reg_la0_oenb = 0xFFFFFFFF; // enable all of bank0 logic analyser outputs (ignore the name, 1 is on, 0 off)
+	reg_la0_data |= (1 << PROJECT_ID); // enable the project
+
+	// reset design with 0bit of 2nd bank of LA
+	reg_la1_oenb = 1; // enable
+	reg_la1_iena = 0;
+	reg_la1_data = 1;
+	reg_la1_data = 0;
+
+	// Generate a random pattern
+	reg_silife_trng = TRNG_PULSE;
+
+	// Enable VGA output
+	reg_silife_vga = VGA_ENABLE;
 }
