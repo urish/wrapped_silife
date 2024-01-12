@@ -111,6 +111,9 @@ void main()
 	reg_la1_data = 1;
 	reg_la1_data = 0;
 
+	// Enable the wishbone interface
+	reg_wb_enable = 1;
+
 	// Generate a random pattern
 	reg_silife_trng = TRNG_PULSE;
 
