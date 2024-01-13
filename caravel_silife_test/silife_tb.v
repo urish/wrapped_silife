@@ -36,7 +36,7 @@ module silife_tb;
 
     ///// convenience signals that match what the cocotb test modules are looking for
     // change to suit your project. Here's how we can make some nicer named signals for inputs & outputs
-    wire max7129_cs = mprj_io[8];
+    wire max7219_cs = mprj_io[8];
     wire max7219_sck = mprj_io[9];
     wire max7219_mosi = mprj_io[10];
 
