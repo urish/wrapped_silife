@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Fri Jan 12 22:48:46 2024
+[*] Sat Jan 13 06:32:39 2024
 [*]
 [dumpfile] "/home/uri/p/wrapped_silife/caravel_silife_test/silife.vcd"
-[dumpfile_mtime] "Fri Jan 12 22:46:00 2024"
-[dumpfile_size] 462551
+[dumpfile_mtime] "Sat Jan 13 06:30:50 2024"
+[dumpfile_size] 611311
 [savefile] "/home/uri/p/wrapped_silife/caravel_silife_test/silife.gtkw"
-[timestart] 243500000
+[timestart] 0
 [size] 1908 999
 [pos] -1 -1
-*-25.377949 437100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-26.301378 514912500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] silife_tb.
 [treeopen] silife_tb.uut.
 [treeopen] silife_tb.uut.mprj.
@@ -17,12 +17,11 @@
 [treeopen] silife_tb.uut.soc.
 [treeopen] silife_tb.uut.soc.core.
 [sst_width] 277
-[signals_width] 206
+[signals_width] 264
 [sst_expanded] 1
 [sst_vpaned_height] 293
 @28
 silife_tb.uut.mprj.wrapped_silife_2.active
-@29
 silife_tb.uut.mprj.wrapped_silife_2.silife1.reset
 @22
 silife_tb.uut.mprj.wrapped_silife_2.wbs_adr_i[31:0]
@@ -61,5 +60,44 @@ silife_tb.uut.soc.core.VexRiscv.execute_PC[31:0]
 silife_tb.uut.soc.core.VexRiscv.dBusWishbone_ADR[29:0]
 @1000200
 -MGMT SOC
+@200
+-
+@c00201
+-Grid
+@820
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row00[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row01[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row02[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row03[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row04[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row05[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row06[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row07[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row08[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row09[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row10[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row11[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row12[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row13[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row14[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row15[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row16[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row17[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row18[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row19[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row20[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row21[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row22[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row23[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row24[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row25[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row26[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row27[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row28[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row29[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row30[255:0]
+silife_tb.uut.mprj.wrapped_silife_2.silife1.row31[255:0]
+@1401201
+-Grid
 [pattern_trace] 1
 [pattern_trace] 0
